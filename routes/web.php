@@ -24,3 +24,5 @@ Route::post('/create-post', [PostController::class, 'createPost']);
 Route::get('/edit-post/{post}', [PostController::class, 'showEditScreen']);
 Route::put('/edit-post/{post}', [PostController::class, 'actuallyUpdatePost']);
 Route::delete('/delete-post/{post}', [PostController::class, 'deletePost']);
+// Route::view('/upload', 'upload');
+// Route::post('/upload', [PostController::class, 'upload'])->name('');

@@ -1,0 +1,19 @@
+body {
+    background-color: #FAF9F6;
+}
+
+h1 {
+    color: #343F3E;
+}
+
+.register {
+    display: flex;
+    height: 1em;
+    font-size: 50px;
+}
+
+.login {
+    display: flex;
+    height: 1em;
+    font-size: 50px;
+}

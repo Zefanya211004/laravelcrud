@@ -4,9 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\Crypt;
 
 class PostController extends Controller
 {
+    // public function upload(Request $request) {
+    //     $request->validate([
+    //         'file' => 'required|mimes:jpg,png,pdf|max:2048'
+    //     ]);
+
+    //     $file = $request->file('image'); 
+    //     $path = $file->store('uploadfile');
+
+    //     return 'redirect('/')';
+    // }
+
     public function deletePost(Post $post) {
         if (auth()->user()->id === $post['user_id']) {
             $post->delete();
@@ -49,6 +61,7 @@ class PostController extends Controller
         $incomingFields['body'] = strip_tags($incomingFields['body']);
         $incomingFields['user_id'] = auth()->id();
         Post::create($incomingFields);
+
         return redirect('/');
     }
 }

@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -21,6 +22,16 @@
         <textarea name="body" placeholder="body content..."></textarea>
         <button>Save Post</button>
     </form>
+
+    {{-- <h2>Upload file</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="text" name="descriptionFile" placeholder="file description">
+        <input type="file" name="file">
+        <button>
+            Upload File
+        </button>
+    </form> --}}
 
     <h2>All Post</h2>
     @foreach($posts as $post)
@@ -40,7 +51,7 @@
     @endforeach
 
     @else
-    <h2>Register</h2>
+    <h2 class="register">Register</h2>
     <form action="/register" method="POST">
         @csrf
         <input name="name" type="text" placeholder="name">
@@ -48,7 +59,7 @@
         <input name="password" type="password" placeholder="password">
         <button>Register</button>
     </form>
-    <h2>Login</h2>
+    <h2 class="login">Login</h2>
     <form action="/login" method="POST">
         @csrf
         <input name="loginname" type="text" placeholder="name">
